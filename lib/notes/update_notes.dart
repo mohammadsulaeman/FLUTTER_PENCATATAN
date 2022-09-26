@@ -41,7 +41,7 @@ class _MyUpdateNotesState extends State<MyUpdateNotes> {
 
   Future getImageCamera() async {
     final pickedfile =
-        await picker.pickImage(source: ImageSource.camera, imageQuality: 80);
+        await picker.pickImage(source: ImageSource.camera, imageQuality: 50);
     setState(() {
       if (pickedfile != null) {
         imagesNote = File(pickedfile.path);

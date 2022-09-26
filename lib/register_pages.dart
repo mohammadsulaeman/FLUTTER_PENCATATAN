@@ -32,7 +32,7 @@ class _MyRegisterPagesState extends State<MyRegisterPages> {
 
   Future getImageCamera() async {
     final pickedfile =
-        await picker.pickImage(source: ImageSource.camera, imageQuality: 80);
+        await picker.pickImage(source: ImageSource.camera, imageQuality: 50);
     setState(() {
       if (pickedfile != null) {
         imagesProfile = File(pickedfile.path);
