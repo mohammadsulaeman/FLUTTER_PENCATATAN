@@ -1,0 +1,6 @@
+package com.example.pencatatan
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity: FlutterActivity() {
+}
