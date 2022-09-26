@@ -22,9 +22,8 @@ class _MyForgetPasswordState extends State<MyForgetPassword> {
           "Silakan Periksa Email Anda, Untuk Proses reset sandi selanjutnya",
           duration: Toast.lengthShort,
           gravity: Toast.bottom);
-      Navigator.of(context).push(MaterialPageRoute(
-          builder: ((context) => MyLoginPage(
-              personKeys: FirebaseAuth.instance.currentUser!.uid))));
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: ((context) => const MyLoginPage())));
     });
   }
 

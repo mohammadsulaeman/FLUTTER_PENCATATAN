@@ -69,9 +69,7 @@ class _MyUpdateNotesState extends State<MyUpdateNotes> {
         await notesRef.child(widget.personKey).update(notes).then((value) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: ((context) => MyHomePages(
-                    personKeys: FirebaseAuth.instance.currentUser!.uid,
-                  )),
+              builder: ((context) => const MyHomePages()),
             ),
           );
         }).catchError((onError) {

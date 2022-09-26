@@ -8,8 +8,7 @@ import 'package:pencatatan/register_pages.dart';
 import 'package:pencatatan/style.dart';
 
 class MyLoginPage extends StatefulWidget {
-  const MyLoginPage({super.key, required this.personKeys});
-  final String personKeys;
+  const MyLoginPage({super.key});
   @override
   State<MyLoginPage> createState() => _MyLoginPageState();
 }
@@ -30,9 +29,7 @@ class _MyLoginPageState extends State<MyLoginPage> {
         if (value != null) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: ((context) => MyHomePages(
-                    personKeys: widget.personKeys,
-                  )),
+              builder: ((context) => const MyHomePages()),
             ),
           );
         }

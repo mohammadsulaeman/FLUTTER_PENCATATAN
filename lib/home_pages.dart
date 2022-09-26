@@ -8,8 +8,7 @@ import 'package:pencatatan/notes/update_notes.dart';
 import 'package:pencatatan/profile/users_pages.dart';
 
 class MyHomePages extends StatefulWidget {
-  MyHomePages({super.key, required this.personKeys});
-  String personKeys;
+  const MyHomePages({super.key});
 
   @override
   State<MyHomePages> createState() => _MyHomePagesState();
@@ -83,8 +82,7 @@ class _MyHomePagesState extends State<MyHomePages> {
                   onPressed: () async {
                     await noteRef.child(notes['key']).remove().then((value) {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) =>
-                              MyHomePages(personKeys: widget.personKeys)));
+                          builder: (context) => MyHomePages()));
                     }).catchError((onError) {
                       print(onError);
                     });
@@ -142,7 +140,8 @@ class _MyHomePagesState extends State<MyHomePages> {
   }
 
   Future getDataUsersByID() async {
-    DataSnapshot snapshot = await registerRef.child(widget.personKeys).get();
+    DataSnapshot snapshot =
+        await registerRef.child(FirebaseAuth.instance.currentUser!.uid).get();
     print(snapshot);
     Map person = snapshot.value as Map;
     print("person = $person");

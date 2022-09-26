@@ -58,9 +58,7 @@ class _MyInsertNoteState extends State<MyInsertNote> {
         await notesRef.push().set(notes).then((value) {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: ((context) => MyHomePages(
-                    personKeys: FirebaseAuth.instance.currentUser!.uid,
-                  )),
+              builder: ((context) => const MyHomePages()),
             ),
           );
         }).catchError((onError) {

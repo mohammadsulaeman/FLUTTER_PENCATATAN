@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:pencatatan/login_pages.dart';
@@ -17,7 +16,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String personKey = FirebaseAuth.instance.currentUser!.uid.toString();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,9 +33,7 @@ class _MyAppState extends State<MyApp> {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyLoginPage(
-        personKeys: personKey,
-      ),
+      home: const MyLoginPage(),
     );
   }
 }

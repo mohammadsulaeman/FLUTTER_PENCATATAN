@@ -30,8 +30,8 @@ class _MyProfilePageState extends State<MyProfilePage> {
             child: ClipOval(
               child: Image.network(
                 person['images'],
-                width: 50,
-                height: 50,
+                width: 210,
+                height: 210,
                 fit: BoxFit.cover,
               ),
             ),
@@ -69,8 +69,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
             child: ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => MyHomePages(
-                          personKeys: FirebaseAuth.instance.currentUser!.uid)));
+                      builder: (context) => const MyHomePages()));
                 },
                 child: Text(
                   'Home',

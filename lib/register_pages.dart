@@ -91,11 +91,8 @@ class _MyRegisterPagesState extends State<MyRegisterPages> {
               FirebaseAuth.instance.currentUser!.uid.toString();
           print("Person Key Regis = $personKey");
           print("CurrencyUser : $currencyuser");
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: ((context) => MyLoginPage(
-                    personKeys:
-                        FirebaseAuth.instance.currentUser!.uid.toString(),
-                  ))));
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: ((context) => const MyLoginPage())));
         }).catchError((onError) {
           print(onError);
         });
